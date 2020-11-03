@@ -1,0 +1,12 @@
+#cart-icon {    
+    top: 5%;
+    right: 9%;    
+}
+
+button {
+    background-color: #3f51b5 !important;
+}
+
+.MuiButton-root {
+    color: white !important;
+}
