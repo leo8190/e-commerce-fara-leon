@@ -6,7 +6,7 @@ export default function App() {
   return (     
     <div>                    
       <NavBar></NavBar>
-      <Home></Home>          
+      <Home greeting="¡Bienvenidxs a tienda Fara León!"></Home>          
     </div>
   );
 }

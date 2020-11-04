@@ -3,14 +3,7 @@ import React from 'react';
 import './Home.css';
 import logoFara from './LogoFara.PNG';
 
-export default class Home extends React.Component {
-    constructor() {     
-        super();   
-        this.state = {
-             greeting: ['¡Bienvenidxs a tienda Fara León!'] 
-       }
-    }    
-
+export default class Home extends React.Component {      
     render() {
         return (
             <div>
@@ -19,7 +12,7 @@ export default class Home extends React.Component {
                         MuiAppBar-colorPrimary MuiPaper-elevation4 MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters
                         MuiTypography-root makeStyles-title-3 MuiTypography-h6' maxWidth="sm"> 
                         <p>
-                            { this.state.greeting }
+                            { this.props.greeting }
                         </p>                 
                         <img alt="" src={logoFara} />
                     </Container> 
