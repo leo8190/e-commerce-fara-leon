@@ -1,0 +1,22 @@
+.buttons{
+    background-color: white !important;
+}
+
+#item-counter{
+    text-align: center;
+    margin: auto;
+    font-size: 0.8rem !important;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 100;
+    line-height: 1;
+    letter-spacing: 0.0075em;    
+}
+
+#item-counter h3{
+    margin-block-end: 1.5% !important;
+    margin-block-start: 0px !important;
+}
+
+#add-to-cart{
+    margin-top: 1%;
+}
