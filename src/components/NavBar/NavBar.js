@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CartIcon from "./CartIcon/CartIcon";
+import "./NavBar.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,8 +25,8 @@ export default function NavBar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
+    <div id="nav-bar" className={classes.root}>
+      <AppBar style={{ background: '#a2836e' }} position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />

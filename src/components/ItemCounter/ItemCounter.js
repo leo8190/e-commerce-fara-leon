@@ -27,13 +27,14 @@ const ItemCounter = ({initialValue, maxValue, onAdd}) => {
   }
   
   return (
-    <div class="MuiAppBar-colorPrimary" id="item-counter">
-      <h2>Item Count</h2>      
-      <h3>Cantidad: {counter}</h3>            
+    <div id="item-counter">      
+      <h3>Seleccioná la cantidad deseada: {counter}</h3>            
       <Button class="buttons" onClick={decrement}>-</Button>
       <Button class="buttons" onClick={increment}>+</Button>            
       <br />
-      <Button id="add-to-cart" class="buttons" onClick={onAddToCart}>Agregar al carrito</Button>
+      <Button id="add-to-cart" class="buttons" onClick={onAddToCart}>
+        Agregar al carrito
+      </Button>
       <hr />
     </div>   
   );

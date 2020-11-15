@@ -1,10 +1,19 @@
 .container {
-    padding: 1%;    
-    /* margin-top: 30px !important; */
+    padding: 1%;        
     text-align: center;
-    height: 90px;    
+    height: 90px; 
+    display: table !important;   
+    background-color: #d9ad7c;
 }
 
-img {
-    margin-top: 3%;
+img {    
+    width: 337px;
+    height: 300px;
 }
+
+/*paleta de colores:
+HEX: #fff2df
+HEX: #d9ad7c
+HEX: #a2836e
+HEX: #674d3c
+*/
