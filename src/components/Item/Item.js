@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-// import "./ItemList.css";
-
-// console.log("aca llego!!!")
+import React from "react";
+import { NavLink } from 'react-router-dom';
+import "./Item.css";
 
 //stateless function component (sfc)
-const Item = ({item}) => {     
-  return (
-    <li class="MuiAppBar-colorPrimary" id={item} class="items">        
-      {item}
-    </li>   
+export const Item = ({item}) => {     
+  return (            
+    <NavLink className="nav-links-items" to={`/ItemDetailContainer/${item.id}`}>
+      {item.name}
+    </NavLink>
   );
 }
-
-export default Item;

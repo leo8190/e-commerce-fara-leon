@@ -1,9 +1,24 @@
-export default function getProductsFromDatabase() {
+//trae todos los productos
+export function getProductsFromDatabase() {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products);
         }, 2000)
     });
+}
+
+//trae el producto cuyo ID ingresa por parametro
+export function getProductFromDatabaseById(selectedId) {
+  return new Promise((resolve) => {
+      console.log("selectedId: " + selectedId);
+      // const selectedProduct = products.find((d) => d.id === selectedId);
+      //const selectedProduct = findById(products, selectedId);
+
+      setTimeout(() => {
+          const jsArrayProducts = JSON.parse(products);
+          resolve(jsArrayProducts[selectedId - 1]);
+      }, 3000)
+  });
 }
 
 const products = `

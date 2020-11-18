@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Item from "../Item/Item.js";
+import React from "react";
+import { Item } from "../Item/Item.js";
 import "./ItemList.css";
 // import "./ItemList.css";
 
@@ -9,7 +9,7 @@ const ItemList = ({itemList}) => {
   return (
     <div id="item-list-div">
       <div>Nuestras creaciones: </div>      
-      {itemList.map(u => <Item item={u.name}></Item>)}      
+        {itemList.map(u => <Item item={u}></Item>)}      
     </div>   
   );
 }
