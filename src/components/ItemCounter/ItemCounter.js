@@ -35,7 +35,7 @@ const ItemCounter = ({initialValue, maxValue, onAdd, onIncrementOrDecrement}) =>
       <Button class="buttons" onClick={increment}>+</Button>            
       <br />
       <Button id="add-to-cart" class="buttons" onClick={onAddToCart}>
-        Agregar al carrito
+        Comprar {counter} unidades
       </Button>
       <hr />
     </div>   
