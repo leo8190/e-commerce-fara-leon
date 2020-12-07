@@ -11,9 +11,11 @@ export const ItemDetail = ({itemDetail}) => {
     const [counterForButton, setCounterForButton] = useState(0);
 
     const printQuantity = (counter) => {   
-        if(counter > 0){            
-            appContext.changeProductName(itemDetail.name);
-            appContext.changeSelectedQuantity(counter);
+        if(counter > 0){         
+            const product = {name: itemDetail.name, quantity: counter}   
+            appContext.addProduct(product);
+            // appContext.selectProductName();
+            // appContext.selectQuantity();
             alert("Se han agregado " + counter + " productos '" + itemDetail.name + "' al carrito.");        
         }
         else{
@@ -31,7 +33,8 @@ export const ItemDetail = ({itemDetail}) => {
             <p>$ {itemDetail.price}</p>
             <p>Stock: {itemDetail.stock}</p>                                        
             <ItemCounter initialValue="0" maxValue={itemDetail.stock} onAdd={printQuantity} 
-                onIncrementOrDecrement={onIncrementOrDecrement}></ItemCounter>
+                onIncrementOrDecrement={onIncrementOrDecrement}>
+            </ItemCounter>
             <br />
             <button>
                 <NavLink style={{"text-decoration": "none !important"}} to={`/`}>Volver al listado</NavLink>

@@ -48,19 +48,38 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, true)}
     >
       <List>        
-          <ListItem button key={selectionToBuy.productName}>            
-            <ListItemText primary="Producto en carrito: " secondary={selectionToBuy.productName}/>
-          </ListItem>
-          <Divider />      
-          <ListItem button key={selectionToBuy.selectedQuantity}>            
-            <ListItemText primary="Cantidad seleccionada: " secondary={selectionToBuy.selectedQuantity}/>
-          </ListItem>  
-          <Divider />            
-          <ListItem button key={selectionToBuy.selectedQuantity}>            
-            <button>Finalizar compra</button>  
-          </ListItem>       
+          {/* esto tiene que mostrarse tantas veces como productos haya en el array */}         
+                  {selectionToBuy.products.length === 0 
+                      ?
+
+                      <ListItem button key="No hay productos en el carrito">            
+                          <ListItemText primary="No hay productos en el carrito"/>
+                      </ListItem> 
+                      :
+
+                      <div>
+                        <ListItem button key="Productos en el carrito: ">            
+                            <ListItemText primary="Productos en el carrito: "/>
+                        </ListItem>                
+                        <Divider />   
+                        {
+                          selectionToBuy.products.map((p) => (
+                            <div>
+                              <ListItem button key={p.name}>            
+                                <ListItemText primary={p.name} secondary={"Cantidad: " + p.quantity}/>
+                              </ListItem>
+                              <Divider />      
+                            </div> 
+                          ))
+                        }
+                        <Divider />            
+                        <ListItem button>            
+                          <button>Finalizar compra</button>  
+                        </ListItem>  
+                      </div>
+                  }                                  
           <Divider />       
-          <ListItem button key={selectionToBuy.selectedQuantity}>            
+          <ListItem button>            
             <NavLink style={{"text-decoration": "none !important"}} to={`/`}>Volver al listado</NavLink>
           </ListItem>       
       </List>                               

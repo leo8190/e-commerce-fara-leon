@@ -24,7 +24,10 @@ const useStyles = makeStyles((theme) => ({
 export default function NavBar() {
   const classes = useStyles();
 
-  const selectionToBuy = useContext(AppContext);
+  const selectionToBuy = useContext(AppContext);  
+
+  console.log("render navBar");
+  console.log(selectionToBuy.productsQuantity);
 
   return (
     <div id="nav-bar" className={classes.root}>
@@ -40,7 +43,7 @@ export default function NavBar() {
             FARA LEON - Objetos de Diseño
           </Typography>          
           <NavLink to="/Cart" > 
-            <Badge badgeContent={selectionToBuy.selectedQuantity} color="primary">     
+            <Badge badgeContent={selectionToBuy.productsQuantity} color="primary">     
               <CartIcon />
             </Badge>
           </NavLink>
