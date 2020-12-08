@@ -6,17 +6,18 @@ import { AppContext } from "../../context/CartContext";
 //stateless function component (sfc)
 export const ItemDetail = ({itemDetail}) => {            
 
+    console.log("itemDetail: ");
+    console.log(itemDetail);
+
     const appContext = useContext(AppContext);
 
     const [counterForButton, setCounterForButton] = useState(0);
 
     const printQuantity = (counter) => {   
         if(counter > 0){         
-            const product = {name: itemDetail.name, quantity: counter}   
-            appContext.addProduct(product);
-            // appContext.selectProductName();
-            // appContext.selectQuantity();
-            alert("Se han agregado " + counter + " productos '" + itemDetail.name + "' al carrito.");        
+            const product = {name: itemDetail.title, quantity: counter}   
+            appContext.addProduct(product);            
+            alert("Se han agregado " + counter + " productos '" + itemDetail.title + "' al carrito.");        
         }
         else{
             alert("La cantidad debe ser al menos 1");        
@@ -29,7 +30,7 @@ export const ItemDetail = ({itemDetail}) => {
 
     return (
         <div >            
-            <p>{itemDetail.name}</p>
+            <p>{itemDetail.title}</p>
             <p>$ {itemDetail.price}</p>
             <p>Stock: {itemDetail.stock}</p>                                        
             <ItemCounter initialValue="0" maxValue={itemDetail.stock} onAdd={printQuantity} 
@@ -37,7 +38,9 @@ export const ItemDetail = ({itemDetail}) => {
             </ItemCounter>
             <br />
             <button>
-                <NavLink style={{"text-decoration": "none !important"}} to={`/`}>Volver al listado</NavLink>
+                <NavLink style={{"text-decoration": "none !important"}} to={`/`}>
+                    Volver al listado de categorías
+                </NavLink>
             </button>
         </div>
     );

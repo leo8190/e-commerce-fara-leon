@@ -80,7 +80,8 @@ export default function TemporaryDrawer() {
                   }                                  
           <Divider />       
           <ListItem button>            
-            <NavLink style={{"text-decoration": "none !important"}} to={`/`}>Volver al listado</NavLink>
+            <NavLink style={{"text-decoration": "none !important"}} to={`/`}>Volver al listado de categorías
+            </NavLink>
           </ListItem>       
       </List>                               
     </div>

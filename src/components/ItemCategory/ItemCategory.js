@@ -1,11 +1,10 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import "./Item.css";
 
 //stateless function component (sfc)
-export const Item = ({item}) => {     
+export const ItemCategory = ({item}) => {     
   return (            
-    <NavLink className="nav-links-items" to={`/ItemDetailContainer/${item.id}`}>
+    <NavLink className="nav-links-items" to={`/CategoryDetailContainer/${item.id}`}>
       {item.title}
     </NavLink>
   );

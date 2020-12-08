@@ -1,12 +1,13 @@
 import {Container, Backdrop} from "@material-ui/core";
-import {useState, useEffect} from 'react';
 import './Home.css';
 import logoFara from './LogoFara.PNG';
 import ItemList from '../../components/ItemList/ItemList';
 import {getProductsFromDatabase} from '../../lib/database'
-import React from 'react';
+import React, { useContext } from "react";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
+import { AppContext } from "../../context/CartContext";
+import {Categories} from '../../components/Categories/Categories';
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {
@@ -16,20 +17,12 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const Home = ({greeting}) => {
-    const classes = useStyles();
+    const classes = useStyles();   
     
-    const [products, setProducts] = useState([]);
+    const dataFromFirebase = useContext(AppContext);      
 
-    //snippet: uef
-    useEffect(() => {
-        getProductsFromDatabase()
-            .then((result) => {
-                return JSON.parse(result);
-            })
-            .then((result) => {
-                setProducts(result);            
-            });
-    }, []);
+    // console.log("categories in home: ");
+    // console.log(dataFromFirebase.categories);
 
     return (
             <div>                
@@ -37,18 +30,19 @@ const Home = ({greeting}) => {
                         MuiPaper-elevation4 MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters
                         MuiTypography-root makeStyles-title-3 MuiTypography-h6' maxWidth="sm"> 
                         <p> {greeting} </p>                                       
-                        {products.length === 0 ? 
+                        {dataFromFirebase.categories === undefined ? 
                             (
-                                <Backdrop className={classes.backdrop} open={true}>
-                                    Cargando listado de nuestras creaciones...
+                                <Backdrop className={classes.backdrop} open={true}>                                    
+                                    Cargando categorías de productos...
                                     <CircularProgress color="inherit" />
                                 </Backdrop>  
                             ) :                         
                             (
                                 <div>
-                                    {                                    
-                                        <ItemList id="item-list" itemList={products}>                                            
-                                        </ItemList>                                    
+                                    {   
+                                        <Categories id="item-list" 
+                                            categories={dataFromFirebase.categories}>                                        
+                                        </Categories>                                                                                                       
                                     }
                                 </div>                            
                             )

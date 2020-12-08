@@ -26,8 +26,8 @@ export default function NavBar() {
 
   const selectionToBuy = useContext(AppContext);  
 
-  console.log("render navBar");
-  console.log(selectionToBuy.productsQuantity);
+  // console.log("render navBar");
+  // console.log(selectionToBuy.productsQuantity);
 
   return (
     <div id="nav-bar" className={classes.root}>

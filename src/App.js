@@ -1,12 +1,14 @@
-import React, { useState }  from "react";
+import React, { useState, useEffect }  from "react";
 import NavBar from "./components/NavBar/NavBar"
 import Home from "./containers/Home/Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ItemDetailContainer } from "./containers/ItemDetailContainer/ItemDetailContainer";
 import { AppProvider } from "./context/CartContext";
+import { CategoryDetailContainer } from "./containers/CategoryDetailContainer/CategoryDetailContainer";
+
 import TemporaryDrawer from "./components/Cart/Cart";
 
-export default function App() {      
+export default function App() {  
 
   return (     
     <div>
@@ -18,11 +20,13 @@ export default function App() {
             <Route exact path="/">
               <Home greeting="¡Bienvenidxs a tienda Fara León!"></Home>          
             </Route>
+            <Route exact path="/CategoryDetailContainer/:idCategorySelected">
+              <CategoryDetailContainer></CategoryDetailContainer>
+            </Route>
             <Route exact path="/ItemDetailContainer/:idSelected">
               <ItemDetailContainer></ItemDetailContainer>
             </Route>
             <Route exact path="/Cart">
-              {/* <Cart></Cart> */}
               <TemporaryDrawer></TemporaryDrawer>          
             </Route>
             </Switch>
