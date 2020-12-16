@@ -6,8 +6,8 @@ import { AppContext } from "../../context/CartContext";
 //stateless function component (sfc)
 export const ItemDetail = ({itemDetail}) => {            
 
-    console.log("itemDetail: ");
-    console.log(itemDetail);
+    // console.log("itemDetail: ");
+    // console.log(itemDetail);
 
     const appContext = useContext(AppContext);
 
@@ -15,7 +15,8 @@ export const ItemDetail = ({itemDetail}) => {
 
     const printQuantity = (counter) => {   
         if(counter > 0){         
-            const product = {name: itemDetail.title, quantity: counter}   
+            const product = {id: itemDetail.id, title: itemDetail.title, price: itemDetail.price,
+                 quantity: counter}   
             appContext.addProduct(product);            
             alert("Se han agregado " + counter + " productos '" + itemDetail.title + "' al carrito.");        
         }

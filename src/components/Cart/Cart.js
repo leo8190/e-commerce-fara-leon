@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import React, { useContext } from "react";
 import { AppContext } from "../../context/CartContext";
 import { NavLink } from 'react-router-dom';
+import { BuyProducts } from "../../libs/firebaseUtils";
 
 const useStyles = makeStyles({
   list: {
@@ -21,6 +22,11 @@ const useStyles = makeStyles({
 
 export default function TemporaryDrawer() {
   const selectionToBuy = useContext(AppContext);
+
+  //// CARGO TODOS LOS PRODUCTOS DEL CARRITO EN EL ARRAY QUE SE ENVIARA A LA BBDD
+  // for (let i = 0; i < selectionToBuy.products.length; i++){
+  //   cart.push(selectionToBuy.products[i]);
+  // }  
 
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -65,8 +71,8 @@ export default function TemporaryDrawer() {
                         {
                           selectionToBuy.products.map((p) => (
                             <div>
-                              <ListItem button key={p.name}>            
-                                <ListItemText primary={p.name} secondary={"Cantidad: " + p.quantity}/>
+                              <ListItem button key={p.title}>            
+                                <ListItemText primary={p.title} secondary={"Cantidad: " + p.quantity}/>
                               </ListItem>
                               <Divider />      
                             </div> 
@@ -74,7 +80,9 @@ export default function TemporaryDrawer() {
                         }
                         <Divider />            
                         <ListItem button>            
-                          <button>Finalizar compra</button>  
+                          {/* <button onclick={() => { BuyProducts(selectionToBuy.products) }}>Finalizar compra</button>   */}
+                          {/* <button>Finalizar compra</button>   */}                          
+                          <button onClick={ function(){ BuyProducts(selectionToBuy.products) } }>Finalizar compra</button>  
                         </ListItem>  
                       </div>
                   }                                  
@@ -100,3 +108,5 @@ export default function TemporaryDrawer() {
     </div>
   );
 }
+
+

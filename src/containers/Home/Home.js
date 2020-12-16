@@ -2,7 +2,7 @@ import {Container, Backdrop} from "@material-ui/core";
 import './Home.css';
 import logoFara from './LogoFara.PNG';
 import ItemList from '../../components/ItemList/ItemList';
-import {getProductsFromDatabase} from '../../lib/database'
+// import {getProductsFromDatabase} from '../../lib/database'
 import React, { useContext } from "react";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';

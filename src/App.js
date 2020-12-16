@@ -17,7 +17,7 @@ export default function App() {
           <BrowserRouter>
             <NavBar></NavBar>
             <Switch>
-            <Route exact path="/">
+            <Route exact path="/" component={Home}>
               <Home greeting="¡Bienvenidxs a tienda Fara León!"></Home>          
             </Route>
             <Route exact path="/CategoryDetailContainer/:idCategorySelected">

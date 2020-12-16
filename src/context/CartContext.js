@@ -15,9 +15,12 @@ export const AppProvider = ({children}) => {
     const addProduct = (newProduct) => {
         let isNewProduct = true;
 
+        // console.log("newProduct:");
+        // console.log(newProduct);
+
         //recorro el array para ver si ese producto ya fue agregado
         for(var i = 0; i < products.length; i++){
-            if(products[i].name === newProduct.name){
+            if(products[i].name === newProduct.title){
                 //si ya fue agregado, agrego al mismo la cantidad correspondiente
                 products[i].quantity = products[i].quantity + newProduct.quantity;
                 isNewProduct = false;
@@ -54,8 +57,8 @@ export const AppProvider = ({children}) => {
                 itemSelectedAux = productsInDatabase[i];                            
             }
         }      
-        console.log("itemSelectedAux: ");
-        console.log(itemSelectedAux);
+        // console.log("itemSelectedAux: ");
+        // console.log(itemSelectedAux);
         setItemSelected(itemSelectedAux);
     }
 

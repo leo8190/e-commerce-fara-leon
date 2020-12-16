@@ -30,8 +30,8 @@ export const ItemDetailContainer = () => {
                 <Container className='container makeStyles-root-1 MuiAppBar-root MuiAppBar-positionStatic 
                     MuiPaper-elevation4 MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters
                     MuiTypography-root makeStyles-title-3 MuiTypography-h6' maxWidth="sm"> 
-                    { console.log("itemSelected: ") }
-                    { console.log(appContext.itemSelected) }
+                    {/* { console.log("itemSelected: ") }
+                    { console.log(appContext.itemSelected) } */}
                     
                     {                      
                     (appContext.itemSelected === undefined) ?
