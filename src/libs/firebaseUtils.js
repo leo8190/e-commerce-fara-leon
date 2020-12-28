@@ -54,12 +54,13 @@ export const BuyProducts = (cart) => {
     };
         
     const actualizarStock = (item) => {        
+        console.log(item);
         // actualizar el stock de un producto al generar una orden
         let docToUpdate = db.collection('products').where("id", "==", item.id);               
         docToUpdate.get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
-                console.log("doc.id");
-                console.log(doc.id);
+                // console.log("doc.id");
+                // console.log(doc.id);
                 db.collection('products').doc(doc.id).update({
                     stock: doc.get("stock") - item.quantity
                 });   
@@ -68,6 +69,8 @@ export const BuyProducts = (cart) => {
     }
     
     for (let i = 0; i < cart.length; i++){
+        console.log("cart");
+        console.log(cart);
         actualizarStock(cart[i]);
     }
 

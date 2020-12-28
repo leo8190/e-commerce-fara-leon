@@ -15,12 +15,12 @@ export const AppProvider = ({children}) => {
     const addProduct = (newProduct) => {
         let isNewProduct = true;
 
-        // console.log("newProduct:");
-        // console.log(newProduct);
+        console.log("newProduct:");
+        console.log(newProduct);
 
         //recorro el array para ver si ese producto ya fue agregado
         for(var i = 0; i < products.length; i++){
-            if(products[i].name === newProduct.title){
+            if(products[i].name === newProduct.name){
                 //si ya fue agregado, agrego al mismo la cantidad correspondiente
                 products[i].quantity = products[i].quantity + newProduct.quantity;
                 isNewProduct = false;
@@ -31,6 +31,9 @@ export const AppProvider = ({children}) => {
         if(isNewProduct){
             products.push(newProduct);
         }
+
+        console.log("products:");
+        console.log(products);
 
         //actualizo el array
         setProductNames(products);

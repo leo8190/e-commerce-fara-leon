@@ -71,8 +71,10 @@ export default function TemporaryDrawer() {
                         {
                           selectionToBuy.products.map((p) => (
                             <div>
-                              <ListItem button key={p.title}>            
-                                <ListItemText primary={p.title} secondary={"Cantidad: " + p.quantity}/>
+                              <ListItem button key={p.name}>  
+                                {console.log("p.name")}          
+                                {console.log(p.name)}          
+                                <ListItemText primary={p.name} secondary={"Cantidad: " + p.quantity}/>
                               </ListItem>
                               <Divider />      
                             </div> 
