@@ -1,38 +1,23 @@
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import { getFirestore } from '../firebase/index';
-import { Redirect } from "react-router-dom";
-import { AppContext } from "../context/CartContext";
-import { useContext } from "react";
 
 const db = getFirestore();
 const orders = db.collection("orders");
 
-let userInfo = {
-    name: "Leon Grand",
-    phone: 1167348967,
-    email: "leongrand@gmail.com",
-};
-
-// let item1 = {
-//     id: 1,
-//     title: "Vela Sendero de Luz",
-//     price: 560,
-// }
-
-// let item2 = {
-//     id: 2,
-//     title: "Cuenco Batik",
-//     price: 800,
-// }
-
-// cart.push(item1);
-// cart.push(item2);
-
+//FINALIZO LA COMPRA
 export const BuyProducts = (cart) => {
-// export default function BuyProducts() {
     
-    // console.log("BuyProducts()");
+    // console.log("BuyProducts()");        
+
+    //junto la info ingresada por el cliente
+    let userInfo = {
+        firstName: document.getElementById("nombre").value, 
+        lastName: document.getElementById("apellido").value,
+        phone: document.getElementById("telefono").value, 
+        email: document.getElementById("e-mail").value, 
+        emailConfirmation: document.getElementById("confirmacion-e-mail").value, 
+    }
 
     // CALCULO EL PRECIO TOTAL DE TODOS LOS PRODUCTOS EN EL CARRITO
     const price = () => {
@@ -51,6 +36,7 @@ export const BuyProducts = (cart) => {
         items: cart,
         date: firebase.firestore.Timestamp.fromDate(new Date()),
         total: price(),
+        state: 'generated',
     };
         
     const actualizarStock = (item) => {        

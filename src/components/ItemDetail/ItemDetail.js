@@ -7,6 +7,7 @@ import cuencoYMano from '../../images/CuencoYMano.PNG';
 import laUnion from '../../images/LaUnion.PNG';
 import senderoDeLuzArcoiris from '../../images/SenderoDeLuzArcoiris.PNG';
 import velaSenderoDeLuz from '../../images/VelaSenderoDeLuz.PNG';
+import "./ItemDetail.css";
 
 //stateless function component (sfc)
 export const ItemDetail = ({itemDetail}) => {            
@@ -20,6 +21,7 @@ export const ItemDetail = ({itemDetail}) => {
 
     const printQuantity = (counter) => {   
         if(counter > 0){         
+            //creo el producto a agregar
             const product = {name: itemDetail.title, quantity: counter, id: itemDetail.id, 
                 price: itemDetail.price};
             appContext.addProduct(product);            
@@ -47,8 +49,8 @@ export const ItemDetail = ({itemDetail}) => {
 
     return (
         <div >            
-            <p>{itemDetail.title}</p>
-            <p>$ {itemDetail.price}</p>
+            <p class="inline">{itemDetail.title}</p>
+            <p class="inline" style={{ "margin-left": "120px"}} > $ {itemDetail.price}</p>                        
             <p>Stock: {itemDetail.stock}</p>   
             {console.log("url of image")}                                     
             {console.log(itemDetail.image)}

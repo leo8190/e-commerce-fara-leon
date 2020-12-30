@@ -81,11 +81,12 @@ export default function TemporaryDrawer() {
                           ))
                         }
                         <Divider />            
-                        <ListItem button>            
-                          {/* <button onclick={() => { BuyProducts(selectionToBuy.products) }}>Finalizar compra</button>   */}
-                          {/* <button>Finalizar compra</button>   */}                          
-                          <button onClick={ function(){ BuyProducts(selectionToBuy.products) } }>Finalizar compra</button>  
-                        </ListItem>  
+                        <NavLink to="/Checkout" >             
+                          <ListItem button>                                      
+                            <button>Continuar compra</button>  
+                            {/* onClick={ function(){ BuyProducts(selectionToBuy.products) } } */}
+                          </ListItem>  
+                        </NavLink>
                       </div>
                   }                                  
           <Divider />       

@@ -1,5 +1,6 @@
 import React, { useState, useEffect }  from "react";
 import NavBar from "./components/NavBar/NavBar"
+import Checkout from "./components/Checkout/Checkout"
 import Home from "./containers/Home/Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ItemDetailContainer } from "./containers/ItemDetailContainer/ItemDetailContainer";
@@ -28,6 +29,9 @@ export default function App() {
             </Route>
             <Route exact path="/Cart">
               <TemporaryDrawer></TemporaryDrawer>          
+            </Route>
+            <Route exact path="/Checkout">
+              <Checkout></Checkout>          
             </Route>
             </Switch>
           </BrowserRouter>  
