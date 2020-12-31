@@ -22,7 +22,9 @@ export const ItemDetail = ({itemDetail}) => {
     const printQuantity = (counter) => {   
         if(counter > 0){         
             //creo el producto a agregar
-            const product = {name: itemDetail.title, quantity: counter, id: itemDetail.id, 
+            // const product = {name: itemDetail.title, quantity: counter, id: itemDetail.id, 
+            //     price: itemDetail.price};
+            const product = {name: itemDetail.title, quantity: counter, id: itemDetail.firebaseID, 
                 price: itemDetail.price};
             appContext.addProduct(product);            
             alert("Se han agregado " + counter + " productos '" + itemDetail.title + "' al carrito.");        
@@ -50,10 +52,12 @@ export const ItemDetail = ({itemDetail}) => {
     return (
         <div >            
             <p class="inline">{itemDetail.title}</p>
-            <p class="inline" style={{ "margin-left": "120px"}} > $ {itemDetail.price}</p>                        
-            <p>Stock: {itemDetail.stock}</p>   
-            {console.log("url of image")}                                     
-            {console.log(itemDetail.image)}
+            <p class="inline" style={{"margin-left": "120px"}}> $ {itemDetail.price}</p>                        
+            <p class="inline"> {itemDetail.description} </p>                        
+            <p class="inline" style={{"margin-left": "20px"}}>Stock: {itemDetail.stock}</p>   
+            {/* style={{ "margin-left": "120px"}} */}
+            {/* {console.log("url of image")}                                     
+            {console.log(itemDetail.image)} */}
             {/* {console.log(itemDetail.image.getDownloadURL)}             */}
             {/* {console.log(imageUrl)} */}
             <img alt=""                
