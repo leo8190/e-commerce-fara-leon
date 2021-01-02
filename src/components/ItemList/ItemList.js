@@ -5,9 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 //stateless function component (sfc)
 //le mando por ej un array de strings con los nombres de los productos
-const ItemList = ({itemList}) => {   
-  // console.log("itemList: ");
-  // console.log(itemList);
+const ItemList = ({itemList}) => {       
 
   return (    
     <div>

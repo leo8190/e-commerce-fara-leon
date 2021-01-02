@@ -8,8 +8,6 @@ const orders = db.collection("orders");
 //FINALIZO LA COMPRA
 export const BuyProducts = (cart) => {
     
-    // console.log("BuyProducts()");        
-
     //junto la info ingresada por el cliente
     let userInfo = {
         firstName: document.getElementById("nombre").value, 
@@ -45,8 +43,6 @@ export const BuyProducts = (cart) => {
         let docToUpdate = db.collection('products').where("id", "==", item.id);               
         docToUpdate.get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
-                // console.log("doc.id");
-                // console.log(doc.id);
                 db.collection('products').doc(doc.id).update({
                     stock: doc.get("stock") - item.quantity
                 });   
@@ -62,13 +58,10 @@ export const BuyProducts = (cart) => {
 
     // ENVIO LA ORDEN A LA BBDD
     orders.add(newOrder).then(({ id }) => {
-        // setOrderId(id); // SUCCESS                    
         alert("¡Tu compra fue realizada con exito! El codigo de tu orden es: " + id);        
         window.location = "/";
     }).catch(err => {
-        // setError(err); // ERROR
     }).finally(() => {
-        //setLoading(false);                
     });      
 }    
 

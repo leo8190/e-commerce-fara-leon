@@ -33,7 +33,8 @@ firebase deploy
 * [React JS](https://es.reactjs.org/) - Biblioteca de JS usada para construir la UI
 * [MATERIAL-UI](https://material-ui.com) - Componentes extra de React usados para diseñar la UI
 * [Create React App](https://github.com/facebook/create-react-app) - Usado para construir el esqueleto de la aplicacion.    
-* [Firebase](https://firebase.google.com/) - Usado para la BBDD de la app. Comando para instalarlo (npm install firebase)    
+* [Firebase](https://firebase.google.com/) - Usado para la BBDD de la app. Comando para instalarlo (npm install firebase)
+* [React Router Dom](https://reactrouter.com) - Usado para administrar el sistema de ruteo y direccionamiento de las URL's dentro de la app. (instalar con el comando *npm install react-router-dom*)     
 
 ### Instalación de Create React App 🔧
 * Available Scripts

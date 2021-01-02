@@ -23,10 +23,7 @@ const useStyles = makeStyles({
 export default function TemporaryDrawer() {
   const selectionToBuy = useContext(AppContext);
 
-  //// CARGO TODOS LOS PRODUCTOS DEL CARRITO EN EL ARRAY QUE SE ENVIARA A LA BBDD
-  // for (let i = 0; i < selectionToBuy.products.length; i++){
-  //   cart.push(selectionToBuy.products[i]);
-  // }  
+  //// CARGO TODOS LOS PRODUCTOS DEL CARRITO EN EL ARRAY QUE SE ENVIARA A LA BBDD 
 
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -84,7 +81,6 @@ export default function TemporaryDrawer() {
                         <NavLink to="/Checkout" >             
                           <ListItem button>                                      
                             <button>Continuar compra</button>  
-                            {/* onClick={ function(){ BuyProducts(selectionToBuy.products) } } */}
                           </ListItem>  
                         </NavLink>
                       </div>

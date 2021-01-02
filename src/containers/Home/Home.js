@@ -2,7 +2,6 @@ import {Container, Backdrop} from "@material-ui/core";
 import './Home.css';
 import logoFara from './LogoFara.PNG';
 import ItemList from '../../components/ItemList/ItemList';
-// import {getProductsFromDatabase} from '../../lib/database'
 import React, { useContext } from "react";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,10 +18,7 @@ const useStyles = makeStyles((theme) => ({
 const Home = ({greeting}) => {
     const classes = useStyles();   
     
-    const dataFromFirebase = useContext(AppContext);      
-
-    // console.log("categories in home: ");
-    // console.log(dataFromFirebase.categories);
+    const dataFromFirebase = useContext(AppContext);              
 
     return (
             <div>                

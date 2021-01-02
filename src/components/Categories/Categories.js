@@ -2,9 +2,7 @@ import React from "react";
 import { ItemCategory } from "../ItemCategory/ItemCategory.js";
 
 //stateless function component (sfc)
-export const Categories = ({categories}) => {  
-  // console.log("categories in categories.js: ");
-  // console.log(categories);
+export const Categories = ({categories}) => {    
   
   return (
     <div id="item-list-div">

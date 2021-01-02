@@ -70,21 +70,11 @@ const validateEmailFields = () => {
 const validateEnteredInfo = () => {
     console.log("ValidateAndBuiyProducts executed");
     if(validateEmptyFields() && validateEmailFields()){
-      setBtnDisabled(false);
-      // document.getElementById("botonFinalizarCompra").disabled = true;
-      // console.log("ValidateAndBuiyProducts executed and is true");
+      setBtnDisabled(false);            
     }
     else{
-      setBtnDisabled(true);
-      // document.getElementById("botonFinalizarCompra").disabled = false;
-      // console.log("ValidateAndBuiyProducts executed and is false");
-    }
-    // else if (validateEmptyFields() == false) {
-    //     alert("Error en los datos ingresados");
-    // }
-    // else if (validateEmailFields() == false) {
-    //     alert("Error en los datos ingresados");
-    // }
+      setBtnDisabled(true);            
+    }    
 }; 
 //FIN VALIDACION DE CAMPOS
 
@@ -175,7 +165,6 @@ const validateEnteredInfo = () => {
                     id="botonFinalizarCompra"
                     variant="contained"
                     color="primary"
-                    // onClick={handleNext}
                     onClick={ function(){ BuyProducts(selectionToBuy.products) } }
                     className={classes.button}
                   >

@@ -24,21 +24,12 @@ const useStyles = makeStyles((theme) => ({
 export default function NavBar() {
   const classes = useStyles();
 
-  const selectionToBuy = useContext(AppContext);  
-
-  // console.log("render navBar");
-  // console.log(selectionToBuy.productsQuantity);
+  const selectionToBuy = useContext(AppContext);      
 
   return (
     <div id="nav-bar" className={classes.root}>
       <AppBar style={{ background: '#a2836e' }} position="static">
-        <Toolbar>
-          {/* <NavLink class="nav-links-nav-bar" to="/" >                  
-            <Button color="inherit">Home</Button>
-          </NavLink> */}
-          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton> */}
+        <Toolbar>          
           <Typography variant="h6" className={classes.title}>
             FARA LEON - Objetos de Diseño
           </Typography>          
@@ -46,8 +37,7 @@ export default function NavBar() {
             <Badge badgeContent={selectionToBuy.productsQuantity} color="primary">     
               <CartIcon />
             </Badge>
-          </NavLink>
-          {/* <Button color="inherit">Login</Button> */}
+          </NavLink>          
         </Toolbar>
       </AppBar>
     </div>

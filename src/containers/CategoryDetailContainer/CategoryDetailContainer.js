@@ -30,7 +30,6 @@ export const CategoryDetailContainer = () => {
                 <Container className='container makeStyles-root-1 MuiAppBar-root MuiAppBar-positionStatic 
                     MuiPaper-elevation4 MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters
                     MuiTypography-root makeStyles-title-3 MuiTypography-h6' maxWidth="sm"> 
-                    {/* {console.log("itemSelected: " + appContext.itemSelected)} */}
                     {                      
                     (appContext.productsFromSelectedCategory === undefined) ?
                             (

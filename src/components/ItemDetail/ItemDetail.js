@@ -44,22 +44,14 @@ export const ItemDetail = ({itemDetail}) => {
     if(cuencoBatik.includes(itemDetail.imageFileName)) selectedProduct = cuencoBatik;
     if(cuencoYMano.includes(itemDetail.imageFileName)) selectedProduct = cuencoYMano;
     if(velaSenderoDeLuz.includes(itemDetail.imageFileName)) selectedProduct = velaSenderoDeLuz;
-    if(senderoDeLuzArcoiris.includes(itemDetail.imageFileName)) selectedProduct = senderoDeLuzArcoiris;
-
-    // ("selectedProduct");
-    // console.log(selectedProduct);
+    if(senderoDeLuzArcoiris.includes(itemDetail.imageFileName)) selectedProduct = senderoDeLuzArcoiris;    
 
     return (
         <div >            
             <p class="inline">{itemDetail.title}</p>
             <p class="inline" style={{"margin-left": "120px"}}> $ {itemDetail.price}</p>                        
             <p class="inline"> {itemDetail.description} </p>                        
-            <p class="inline" style={{"margin-left": "20px"}}>Stock: {itemDetail.stock}</p>   
-            {/* style={{ "margin-left": "120px"}} */}
-            {/* {console.log("url of image")}                                     
-            {console.log(itemDetail.image)} */}
-            {/* {console.log(itemDetail.image.getDownloadURL)}             */}
-            {/* {console.log(imageUrl)} */}
+            <p class="inline" style={{"margin-left": "20px"}}>Stock: {itemDetail.stock}</p>               
             <img alt=""                
                 src={selectedProduct}                
             >

@@ -13,8 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import { AppContext } from "../../context/CartContext";
 import { BuyProducts } from "../../libs/firebaseUtils";
 import { ValidateAndBuyProducts } from "../../libs/firebaseUtils";
-// import AddressForm from './AddressForm';
-// import PaymentForm from './PaymentForm';
 import Review from '../../components/Review/Review';
 
 function Copyright() {
@@ -67,16 +65,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const steps = ['Shipping address', 'Payment details', 'Review your order'];
 const steps = ['Revisá tu orden e ingresá tu info'];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      // return <AddressForm />;
       return <Review />;
     case 1:
-      // return <PaymentForm />;
       return <Review />;
     case 2:
       return <Review />;
@@ -103,26 +98,10 @@ export default function Checkout() {
     <React.Fragment>
       <CssBaseline />      
       <main className={classes.layout}>
-        <Paper className={classes.paper}>
-          {/* <Typography component="h1" variant="h4" align="center">
-            Checkout
-          </Typography> */}
-          {/* <Stepper activeStep={activeStep} className={classes.stepper}>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper> */}
+        <Paper className={classes.paper}>         
           <React.Fragment>
             {activeStep === steps.length ? (
-              <React.Fragment>
-                {/* <Typography variant="h5" gutterBottom>
-                  ¡Gracias por tu compra!
-                </Typography>
-                <Typography variant="subtitle1">
-                  El código de tu orden es #2001539.
-                </Typography> */}
+              <React.Fragment>                
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -132,18 +111,7 @@ export default function Checkout() {
                     <Button onClick={handleBack} className={classes.button}>
                       Back
                     </Button>
-                  )}
-                  {/* <Button
-                    disabled={true}
-                    id="botonFinalizarCompra"
-                    variant="contained"
-                    color="primary"
-                    // onClick={handleNext}
-                    onClick={ function(){ BuyProducts(selectionToBuy.products) } }
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1 ? 'Realizar compra' : 'Next'}
-                  </Button> */}
+                  )}                  
                 </div>
               </React.Fragment>
             )}
