@@ -3,87 +3,106 @@
 An e-commerce for the sale of design objects made with cement, ceramics, mosaics, and love.
 
 ## Comenzando 🚀
+### Pre-requisitos para levantar la app 📋
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+* [Visual Studio Code](https://code.visualstudio.com/) Este o cualquier otro editor de codigo te servira para desarrollar y mantener la App
+* [React JS](https://es.reactjs.org/) - Biblioteca de JS usada para construir la UI
+* [Git](https://git-scm.com/downloads) - Usado para el control de versiones del codigo de la app.
+* [Extension de GitHub para Visual Studio Code]()- Usada integrar al IDE o editor de texto, el control de versiones del codigo de la app.
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+### Clonando el proyecto
 
+Clona el siguiente repositorio en GitHub para levantar la app y poder desarrollarla:
+[Repo en GitHub](c/leo8190/e-commerce-fara-leon)
 
-### Pre-requisitos 📋
-
-_Que cosas necesitas para instalar el software y como instalarlas_
-
-```
-Da un ejemplo
-```
-
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
+Mira **Despliegue** para conocer como desplegar el proyecto.
 
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+Para subir cambios del codigo al servidor donde esta Hosteado el sitio [Firebase](https://e-commerce-fara-leon.web.app/), crear un proyecto en Firebase Hosting y luego ejecutar los siguientes comandos en la terminal de Visual Studio Code:
 
-## Construido con 🛠️
+npm install firebase (si ya lo instalaste, este paso no es necesario)
+firebase login
+npm run build
+firebase init
+firebase use e-commerce-fara-leon
+firebase deploy
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+## Construido con las siguientes 🛠️ (Instrucciones para instalaciones debajo)
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [React JS](https://es.reactjs.org/) - Biblioteca de JS usada para construir la UI
+* [MATERIAL-UI](https://material-ui.com) - Componentes extra de React usados para diseñar la UI
+* [Create React App](https://github.com/facebook/create-react-app) - Usado para construir el esqueleto de la aplicacion.    
+* [Firebase](https://firebase.google.com/) - Usado para la BBDD de la app. Comando para instalarlo (npm install firebase)    
 
-## Contribuyendo 🖇️
+### Instalación de Create React App 🔧
+* Available Scripts
 
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+In the project directory, you can run:
+
+* `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+* `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+* `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+* Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+* Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+* Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+* Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+* `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ## Wiki 📖
 
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/leo8190/e-commerce-fara-leon/wiki)
 
 ## Versionado 📌
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+Usamos [Git](http://github.com/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/leo8190/e-commerce-fara-leon/tags).
 
 ## Autores ✒️
 
 * **Leonardo Apollonio** - *Desarrollador* - [leo8190](https://github.com/leo8190)
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/leo8190/e-commerce-fara-leon/contributors) quíenes han participado en este proyecto. 
 
 ## Licencia 📄
 
@@ -91,12 +110,7 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 
 ## Expresiones de Gratitud 🎁
 
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
-
+* Agradezco a los profes y tutores del curso de React JS de Corderhouse (de septiembre 2020) por su enseñanza para desarrollar este proyecto
 
 ---
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+⌨️ con ❤️ por [leo8190](https://github.com/leo8190/) 😊
