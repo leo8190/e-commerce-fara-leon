@@ -23,6 +23,13 @@ const useStyles = makeStyles({
 export default function TemporaryDrawer() {
   const selectionToBuy = useContext(AppContext);
 
+  let precioTotal = 0;
+
+  selectionToBuy.products.map((product) => (    
+      precioTotal = precioTotal + product.price * product.quantity
+  ));
+
+
   //// CARGO TODOS LOS PRODUCTOS DEL CARRITO EN EL ARRAY QUE SE ENVIARA A LA BBDD 
 
   const classes = useStyles();
@@ -64,15 +71,24 @@ export default function TemporaryDrawer() {
                         <ListItem button key="Productos en el carrito: ">            
                             <ListItemText primary="Productos en el carrito: "/>
                         </ListItem>                
-                        <Divider />   
+                        <Divider />
+                        <Divider />
+                        <Divider />
+                        <Divider />
+                        <Divider />    
                         {
                           selectionToBuy.products.map((p) => (
                             <div>
-                              <ListItem button key={p.name}>  
-                                {console.log("p.name")}          
-                                {console.log(p.name)}          
-                                <ListItemText primary={p.name} secondary={"Cantidad: " + p.quantity}/>
+                              <ListItem button key={p.name}>                                  
+                                <ListItemText primary={p.name} secondary={"Cantidad: " + p.quantity}/>                                                              
                               </ListItem>
+                              <ListItem>
+                                <ListItemText secondary={"Precio unitario: $ " + p.price} 
+                                  primary={"Total: $" + p.price * p.quantity}/>                                
+                              </ListItem>
+                              <Divider />
+                              <Divider />
+                              <Divider />
                               <Divider />      
                             </div> 
                           ))
@@ -83,9 +99,12 @@ export default function TemporaryDrawer() {
                             <button>Continuar compra</button>  
                           </ListItem>  
                         </NavLink>
+                        <ListItem>
+                          <ListItemText primary={"Total del pedido: $ " + precioTotal}/>
+                        </ListItem>
                       </div>
                   }                                  
-          <Divider />       
+          <Divider />                 
           <ListItem button>            
             <NavLink style={{"text-decoration": "none !important"}} to={`/`}>Volver al listado de categorías
             </NavLink>
